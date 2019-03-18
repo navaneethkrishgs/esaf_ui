@@ -1,0 +1,1657 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HDFC</title>
+	<meta name="description" content="HDFC Website">
+	<meta name="author" content="hdfc.com">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/bootstrap-4.1.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css" />
+
+
+
+    <!-- <link rel="stylesheet" href="screen.css" media="screen" /> -->
+    <!-- <link rel="stylesheet" href="keyboard.css" media="screen" /> -->
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="jQKeyboard.css">
+<link rel="stylesheet" type="text/css" href="jQKeyboardpass.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+
+   <style>
+    .navigation{
+            background: url(hdfc-icons-sprite_enter1.png) no-repeat;
+            background-repeat: none;
+          }
+
+    .addNewUser{
+        background: url(hdfc-icons-sprite_enter1.png) no-repeat;
+            background-repeat: none;
+    }
+    .faceBtn{
+            background: url(hdfc-icons-sprite_enter1.png) no-repeat;
+            background-repeat: none;
+          }
+    .sett_nav_Joystick_btn{
+        /* background-image: url(joystick.jpg); */
+           /* background: url(joystick.jpg) no-repeat;
+           background-size: cover; */
+}
+   </style>
+
+
+<link rel="stylesheet" type="text/css" href="jquery.onscreenKeyboard.css" />
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script> -->
+<!-- <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script> -->
+
+
+
+
+<script>
+  
+</script>
+
+</head>
+<body id="body" onload="emptyCode();" >
+
+<!-- start startpage session-->
+<div id="startingPage">
+    <header  >
+    </header>
+    <main class="background-image">
+        <!-- <section class="main">
+				
+            <div class="switch demo4">
+                <input type="checkbox">
+                <label>Start</label>
+            </div>
+            
+        </section> -->
+
+            <div class="class-allpage container-index">
+                <div class="container-logo-caption" id="startCaption" onclick="letsStart();">
+                
+                    <div class="navigation">
+                        <h2 id="startId">Start</h2>
+                    </div>
+                </div>
+        
+            </div>
+
+    <div class="divLog">
+        <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+    </div>
+    </main>
+    
+</div>	
+<!-- end startpage-->
+
+<!-- start loading session-->
+<div id="loadingPage">
+    <header  >
+    </header>
+    <main class="background-image">
+            <div ><h2 id="loaderText">Loading...</h2></div>
+            <div class="class-allpage container-index">
+                <div class="container-logo-caption" id="startCaption">
+                  
+                    <div id="loader"></div>
+                </div>
+        
+            </div>
+
+            <div class="divLog">
+                <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+            </div>
+    </main>
+</div>	
+<!-- end loading-->
+
+<!-- start first session-->
+    <div id="indexPage">
+        <header >
+            <ul >
+                <li>
+                    <i class="fa fa-video-camera" aria-hidden="true" id="cameraFeedBtn" onclick="cameraFeed()"></i>
+                </li>
+                <li>
+                    <i class="fa fa-retweet" aria-hidden="true" id="refreshBtn" onclick="allPageRefresh();"></i>
+                </li>
+                <li>
+                    <p id="time"></p>
+                </li>
+                <a href="#" data-toggle="modal" data-target="#settingsModalCenter" class="setModal"><li><i id="settingsBtn"  class="fa fas  fa-2x fa-cogs"></i></a></li>
+                <a href="#" onclick="nextPage('welcome');"><li><i  id="nextPage" class="fa fa-arrow-right indexPageBackBtn" aria-hidden="true"></i></a></li>
+            </ul>
+        </header>
+
+        <main class="background-image indexpageClass" >
+                <div class="class-allpage container-index">
+                        <div class="container-logo-caption" style="top:46%;">
+                            <h2>Hi, I'm SAYA</h2>
+                            <span class="hr-line"></span>
+                            <div id="page-front-img">
+
+                            </div>
+                            
+                        </div>
+
+
+                    <!-- Modal -->
+                    <!-- <div id="settingModalPage"></div> -->
+                    <div class="modal fade" id="settingsModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" >
+                        <div class="modal-content" id="settingsModalContent">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="settingsModalCenterTitle">Enter Settings Password</h5>
+
+                        </div>
+                        <div class="modal-body" >
+                                <form method="get" id="form1">
+                                        <input type="number" name="code" value="" class="form-control display" id="settingsPass" placeholder="Password" maxlength="4" onfocus="showKeys()">
+                                        <p id="message">Password length is 4 !</p>
+                                        <table id="keypad" cellpadding="5" cellspacing="3">
+                                            <tr>
+                                                <td onclick="addCode('1');">1</td>
+                                                <td onclick="addCode('2');">2</td>
+                                                <td onclick="addCode('3');">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="addCode('4');">4</td>
+                                                <td onclick="addCode('5');">5</td>
+                                                <td onclick="addCode('6');">6</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="addCode('7');">7</td>
+                                                <td onclick="addCode('8');">8</td>
+                                                <td onclick="addCode('9');">9</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="backLetters();">Back </td>
+                                                <td onclick="addCode('0');">0</td>
+                                                <td onclick="ClearPassLet();">Clear</td>
+                                            </tr>
+                                        </table>
+                                       
+                                        
+                                        </form>
+                                <!-- <input type="password" class="form-control" id="settingsPass" placeholder="Password" maxlength="4">
+                                <div class="valid">
+                                    <p>Please Enter Valid Password.</p>
+                                </div> -->
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="close" onclick="Modalclose('1');" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="enterBtn" onclick="check_user('welcome')">Ok</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                </div>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>
+        </main>
+    </div>	
+<!-- end first-->
+<!-- start welcome session-->
+    <div id="welcomePage">
+        <header  >
+        </header>
+        <main class="background-image">
+
+
+                <div class="class-allpage container-index">
+                    <div class="container-logo-caption" >
+                    
+                        <h1 class="saya">Welcome</h1>
+                        
+                        <span class="hr-line"></span>
+                        <h2  id="User"></h2>
+                    </div>
+            
+                </div>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>
+        
+        </main>
+    </div>	
+<!-- end welcome-->
+
+<!-- start settings session-->
+<div id="settingsPage"> 
+       <header >
+            <ul style="float:left;">
+                <li>
+                    <!-- <a href="#" onclick="nextPage('settings');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                </li>
+                <li>
+                   
+                </li>
+            </ul>        
+                <ul >
+                        <li id="brt">
+                                <div id="bright">
+                                        <i class="fa fa-sun-o" aria-hidden="true"></i>
+                                        <div id="brightness"></div>
+                                        <i class="fa fa-ban" aria-hidden="true"></i>
+                                    </div>
+
+                        </li>
+                    <li>
+                            <div id="player">
+                                <i class="fa fa-volume-down"></i>
+                                <div id="volume"></div>
+                                <i class="fa fa-volume-up"></i>
+                            </div>
+                    </li>
+                    <li>
+                      <div class="addNewUser" data-toggle="modal" data-target="#adNewuserDect">
+                         <h5 id="addNewUserText">New User</h5>
+                      </div>
+                    </li>
+                    <li>
+                        <p id="time1"></p>
+                    </li>
+                   
+                   
+                </ul>
+        </header>
+        <main class="background-image">
+            <div class="btn">
+                <div class="row">
+                        <div class="col-6 ">
+                            
+                            <div class="navigation" onclick="changePass();" data-toggle="modal" data-target="#exampleModal1">
+                                 <h5 id="changepassText">Change Password</h5>
+                            </div>
+ 
+                        </div>
+
+                        <div class="col-6">
+                                <div class="navigation" id="themeChangeId"  onclick="themeChange();" data-toggle="modal" data-target="#exampleModal2">
+                                    <h5 id="changepassText1">Change Theme </h5>
+                                </div>
+     
+                        </div>
+                       
+                </div>
+    
+                <div class="row">
+                        <div class="col-6 ">
+                            <div class="navigation"id="btn1" onclick="enable_disable();" data-toggle="modal" data-target="#exampleModal3">
+                                <h5 id="changepassText2">Page Enable/Disable</h5>
+                            </div>
+ 
+                        </div>
+
+                        <div class="col-6 " >
+                        	        <div class="navigation" id="btn2"  onclick="joystick();">
+                                    <h5 id="changepassText3">Remote control</h5>
+                                </div>
+     
+                        </div>
+                       
+                </div>
+                <div class="row" id="centerBtn">    
+                        <div class="col-6 ">    
+                        <div class="navigation" id="btn3" onclick="toChangeStatus();">
+                            <h5 id="changepassText4">Reset</h5>
+                        </div>
+                        </div>
+
+                        <div class="col-6 ">    
+                        <div class="navigation"  id="btn4" onclick="toAddImage();">
+                            <h5 id="changepassText5">Addons</h5>
+                        </div>
+                        </div>
+                </div>  
+              
+
+                <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Change Password</h5>
+                       
+                        </div>
+                        <div class="modal-body">
+                                <form method="get" id="form2">
+                                        <input type="text" name="code1" value="" class="form-control display1" id="changePassTextVal" placeholder="Password" maxlength="4"  onfocus="showKeysUp()">
+                                        <!-- <input type="text" name="code" value="" class="form-control display" id="settingsPass" placeholder="Password" maxlength="4" onfocus="showKeys()"> -->
+                                        <p id="message1">Password length is 4 !</p>
+                                        <table id="keypad1" cellpadding="5" cellspacing="3">
+                                            <tr>
+                                                <td onclick="addCodeUp('1');">1</td>
+                                                <td onclick="addCodeUp('2');">2</td>
+                                                <td onclick="addCodeUp('3');">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="addCodeUp('4');">4</td>
+                                                <td onclick="addCodeUp('5');">5</td>
+                                                <td onclick="addCodeUp('6');">6</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="addCodeUp('7');">7</td>
+                                                <td onclick="addCodeUp('8');">8</td>
+                                                <td onclick="addCodeUp('9');">9</td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="backLettersUp();">Back </td>
+                                                <td onclick="addCodeUp('0');">0</td>
+                                                <td onclick="ClearPassLetUp();">Clear</td>
+                                            </tr>
+                                        </table>
+                                       
+                                        
+                                        </form>
+
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="cnhPass" onclick="changePassW()">Save </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                                <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                       
+                                <h5 class="modal-title" id="exampleModalLabel2">Change Theme</h5>
+                        </div>
+                        <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="funkyradio">
+                                
+                                    <div class="funkyradio-info" onclick="toChnageTheme('1');">
+                                        <input type="radio" name="radio" id="radio6" />
+                                        <label for="radio6">Red</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                    <div class="funkyradio">
+                                    
+                                        <div class="funkyradio-info1"  onclick="toChnageTheme('2');">
+                                            <input type="radio" name="radio" id="radio7" />
+                                            <label for="radio7">Blue</label>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="funkyradio">
+                                
+                                    <div class="funkyradio-info2" onclick="toChnageTheme('3');">
+                                        <input type="radio" name="radio" id="radio8" />
+                                        <label for="radio8">Green</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                    <div class="funkyradio">
+                                    
+                                        <div class="funkyradio-info3"  onclick="toChnageTheme('4');">
+                                            <input type="radio" name="radio" id="radio9" />
+                                            <label for="radio9">Brown</label>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary" id="themechangeBtn" onclick="themechangeBtn()">Save </button> -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                   
+                   <!-- Modal -->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Page Enable / Disable</h5>
+                    
+                    </div>
+                    <div class="modal-body">
+                   <p> Navigation Page <span class="langSeleBtn">Enable</span>
+                    <label class="switch">
+                        <input type="checkbox" id="navPagedisbale"> 
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="langSeleBtn">Disable</span></p> 
+                   
+                    <p> Reason for visiting Page <span class="langSeleBtn">Enable</span>
+                        <label class="switch">
+                            <input type="checkbox" id="reasonPageDisable">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="langSeleBtn">Disable</span></p>
+
+                        <p> Speech Page <span class="langSeleBtn">Enable</span>
+                            <label class="switch">
+                                <input type="checkbox" id="SpeechPageDisable">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="langSeleBtn">Disable</span></p>
+
+                        <p> Video Calling Page <span class="langSeleBtn">Enable</span>
+                            <label class="switch">
+                                <input type="checkbox" id="VideoCallPageDisable">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="langSeleBtn">Disable</span></p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+                      
+            
+        <!--Add new user Modal -->
+        <div class="modal fade" id="adNewuserDect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Add New User</h5>
+                    
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" id="userLabel">User Name</label>
+                            <input type="text" class="form-control" id="username" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" id="userLabel">User Details</label>
+                            <textarea type="text" class="form-control" rows="3" id="uerdetails" placeholder="User Details"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-info" style="float:right;">Add Image</button><br/>
+                        
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addNewUserbrn" onclick="addNewUser()">Add</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+ 
+           
+          <p><i class="fa fa-power-off" aria-hidden="true" id="powerbtn" data-toggle="modal" data-target="#powerbtnModal" onclick="Power_Off_On()"></i></p>
+           <!-- Modal -->
+                <div class="modal fade" id="powerbtnModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                           
+                            <div class="modal-body" id="exampleModalLabel3">
+                              Are You Sure ?...
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="powerOff();">Ok</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+        <div id="newuserSlide">
+
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                   <p id="newuser"></p>
+                                </div>
+                                <div class="carousel-item">
+                                        <p >test user1</p>
+                                </div>
+                                <div class="carousel-item">
+                                        <p >test user2</p>
+                                </div>
+                                </div>
+
+                        </div>
+                </div>
+
+                <footer>
+                    <div class="divLog">
+                        <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                    </div>
+                    </main>
+                    <div class="enterBtn1" id="enterBtn" >
+
+                     <div class="centered1"> 
+                            <a href="#" onclick="nextPage('settings');"><li><i  id="nextPage" class="fa fa-arrow-left settingsPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                            <a href="#" onclick="nextPage('settings1');"><li><i  id="nextPage" class="fa fa-arrow-left settingsPageBackBtn1" aria-hidden="true">&nbsp;Back</i></a>
+                    </div>
+                     </div> 
+
+                </footer>
+
+</div>
+<!-- end settingsPage-->
+
+
+        <!-- settings navigation page session-->
+        <div id="settings_navigation_Page">
+            <header  >
+            </header>
+            <main class="background-image">
+                    <div class="sett_nav_btn" >
+                        <div class="row">
+                                <div class="col-6 ">
+                                    
+                                    <div class="navigation" onclick="autonomous();" >
+                                         <h5 id="changepassText" style="    left: 21%;">Addons</h5>
+                                    </div>
+         
+                                </div>
+        
+                                <div class="col-6">
+                                        <div class="navigation" id="themeChangeId"  onclick="app();">
+                                            <h5 id="changepassText1" style="    left: 34%;">App</h5>
+                                        </div>
+             
+                                </div>
+                               
+                        </div>
+            
+                        <div class="row">
+                                <div class="col-6 ">
+                                    <div class="navigation"id="btn1" onclick="joystick();" >
+                                        <h5 id="changepassText2" style=" left: 26%;">Joystick</h5>
+                                    </div>
+         
+                                </div>
+        
+                                <div class="col-6 " >
+                                        <div class="navigation" id="btn2"  onclick="keyboard();">
+                                            <h5 id="changepassText3" style="    left: 26%;">keyboard</h5>
+                                        </div>
+             
+                                </div>
+                               
+                        </div>
+                       
+
+            <footer>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>         
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+               
+                 <div class="centered1"> 
+                        <a href="#" onclick="nextPage('settings_nav');"><li><i  id="nextPage" class="fa fa-arrow-left settings_navigation_PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div> 
+                
+        </footer>  
+      </div>	
+        <!-- end settings navigation page-->
+
+         <!-- settings navigation app page session-->
+         <div id="settings_Nav_App_Page">
+            <header  >
+            </header>
+            <main class="background-image">
+                   <div class="sett_nav_app_btn" >
+
+                    
+
+                     <div class="row">
+                         <div class="col-4" id="test1">
+                            <button type="button" class="btn btn-info" id="Appbtn1" onclick="turnleft();"><i class="fa fa-arrow-left" id="btnArrow" aria-hidden="true"></i></button>
+                         </div>
+                         <div class="col-4" id="test2">
+                            <div class="upper">
+                                <button type="button" id="Appbtn2" class="btn btn-info" onclick="goforward();"><i class="fa fa-arrow-up" id="btnArrow" aria-hidden="true"></i></button>
+                            </div>
+                              
+                            <div class="down">
+                                <button type="button" id="Appbtn3" class="btn btn-info" onclick="gobackward();"><i class="fa fa-arrow-down" id="btnArrow" aria-hidden="true"></i></button>
+                            </div>
+                            
+                                  
+                        </div>
+                         <div class="col-4" id="test2">
+                                <button type="button" id="Appbtn4" class="btn btn-info"  onclick="turnright();"><i class="fa fa-arrow-right" id="btnArrow" aria-hidden="true"></i></button>
+                         </div>
+                     </div>
+                    </div>
+                       
+                  
+            <footer>
+                <!-- <div class="gdhd"><p>test</p></div>
+           </footer>            -->
+           <div class="divLog">
+            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+           </div>
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+               
+                 <div class="centered1"> 
+                        <a href="#" onclick="nextPage('settings_nav_app_next');"><li><i  id="nextPage" class="fa fa-arrow-left settings_Nav_App_PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div> 
+                
+        </footer>  
+      </div>	
+        <!-- end settings navigation app page-->
+
+        <!-- settings navigation joystick page session-->
+        <div id="settings_Nav_Joystick_Page">
+            <header  >
+            </header>
+            <main class="background-image">
+                    <div class="sett_nav_Joystick_btn" >
+                      <img src="joy640.png" id="joyImg"> 
+                    </div>
+       
+            <footer>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>         
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+                
+                    <div class="centered1"> 
+                        <a href="#" onclick="nextPage('settings_nav_joystick_next');"><li><i  id="nextPage" class="fa fa-arrow-left settings_Nav_Joystick_PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                    </div> 
+                
+        </footer>  
+        </div>	
+        <!-- end settings navigation joystick page-->
+         <!-- settings navigation Keyboard page session-->
+         <div id="settings_Nav_Keyboard_Page">
+                <header  >
+                </header>
+                <main class="background-image">
+                        <div class="sett_nav_Keyboard_btn" >
+                            <img src="keyboardImg.png" id="keyboardImg"> 
+                        </div>
+           
+                <footer>
+                    <div class="divLog">
+                        <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                    </div>           
+                    </main>
+                    <div class="enterBtn1" id="enterBtn" >
+                    
+                        <div class="centered1"> 
+                            <a href="#" onclick="nextPage('settings_nav_keyboard_next');"><li><i  id="nextPage" class="fa fa-arrow-left settings_Nav_Keyboard_PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                    </div>
+                        </div> 
+                    
+            </footer>  
+            </div>	
+            <!-- end settings navigation Keyboard page-->
+
+<!-- start welcome session-->
+    <div id="face_recognition">
+        <header  >
+        </header>
+        <main class="background-image">
+                <h1 id="faceHeadText">Face Recognition</h1>
+        <!-- <div class="row"></div> -->
+        <div class="row" id="snapContainer">
+            
+            <div class="col-4">
+                    <div id="videoDiv" >
+                            <video id="video" width="350" controls="true">
+                                <source src="test.mp4"><!-- WebKit -->
+                            </video><br/>
+                            <div class="navigation" onclick="shoot();" >
+                                <h5 id="faceText">Take Snapshot</h5>
+                           </div>
+                            <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
+                    </div>
+            </div>
+            <div class="col-4">
+                <div id="output"></div>
+            </div>
+            <div class="col-4">
+                <form>
+                    <div class="form-group" id="faceFormGroup">
+                      <input type="text" class="form-control" id="faceName" aria-describedby="emailHelp" value="test user" placeholder="Face Name" readonly>
+                    </div>
+                    <div id="addfaceDiv">
+                    <div class="navigation" onclick="addFace();" >
+                        <h5 id="addfaceText">Add Face</h5>
+                   </div>
+                </div>
+                    <!-- <button type="button" id="addFaceBtn" class="btn btn-primary" onclick="addFace();">Add Face</button> -->
+                </form>
+            </div>
+        </div>
+        
+
+
+
+                <footer>
+                    <div class="divLog">
+                        <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                    </div>
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+
+                 <div class="centered1">
+                        <a href="#" onclick="nextPage('settings_nav_face');"><li><i  id="nextPage" class="fa fa-arrow-left face_recognitionBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div>
+        </footer>
+      </div>
+<!-- end welcome-->
+<!-- start Counter session-->
+<div id="counterPage">
+    <header >
+
+            <ul style="float:left">
+                <span class="langSeleBtn">English</span>
+                <label class="switch">
+                    <input type="checkbox" id="langChange" onchange="changeToEnglish();">
+                    <span class="slider round"></span>
+                </label>
+                <span class="langSeleBtn">Hindi</span>
+            </ul>
+            <ul >   
+
+                <li>
+                    <p id="time1"></p>
+                </li>
+                <a  href="#" data-toggle="modal" data-target="#settingsModalCenter3"><li><i id="settingsBtn3" class="fa fas  fa-2x fa-cogs homeSetBtn"></i></a></li>
+             
+<!--                  <a href="#" onclick="nextPage('back_home');"><li><i  id="nextPage" class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+ -->            </ul>
+    </header>
+    <main class="background-image" id="counterPage1">
+
+        <div class="container-choice">
+			<h2 id="choiceText">Tap on the Option of your Choice</h2>
+			<span class="hr-line"></span>
+			<div class="content" id="contentId">
+                <div class="container">
+                    <div class="row">
+                    <div class="column-two" id="choice_cash_withdrawal" onclick="navigation();">
+                        <i class="icon-options hdfc-sprite one"></i>
+                        <div class="option-bg hdfc-sprite" onclick="demo();">
+                            <div id="naviIcon"><img  id="naviIconImag" src="navigationIcon.png"></div>
+                            <p class="counter navigatioS" id="navigatio">Sections</p>
+                        </div>
+                    </div>
+                    </div>
+
+                   <div class="row">
+                        <div class="column-two" id="choice_demat" onclick="speech();">
+
+                            <i class="icon-options hdfc-sprite four"></i>
+                            <div class="option-bg hdfc-sprite">
+                                <div id="videoIcon"><img  id="videoIconImag" src="reason.png"></div>
+                                <p class="counter" id="speechTex">Chat With Me</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column-two" id="choice_cash_deposit" onclick="reasonForVisiting();">
+
+                            <i class="icon-options hdfc-sprite two"></i>
+                            <div class="option-bg hdfc-sprite">
+                                <div id="reasonIcon"><img  id="reasonIconImag" src="speechIcon.png"></div>
+                                <p class="counter_reason" id="reasonTex">Visiting Reasons</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+				<!-- <div class="column-two" id="choice_cash_withdrawal" onclick="navigation();">
+					<i class="icon-options hdfc-sprite one"></i>
+					<div class="option-bg hdfc-sprite" onclick="demo();">
+                       <div id="naviIcon"><img  id="naviIconImag" src="navigationIcon.png"></div>
+						<p class="counter navigatioS" id="navigatio">Sections</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_cash_deposit" onclick="reasonForVisiting()">
+					<i class="icon-options hdfc-sprite two"></i>
+					<div class="option-bg hdfc-sprite"  >
+                        <div id="reasonIcon"><img  id="reasonIconImag" src="reason.png"></div>
+						<p class="counter_reason" id="reasonTex">Visiting Reasons</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_demat" onclick="speech();">
+					<i class="icon-options hdfc-sprite three"></i>
+					<div class="option-bg hdfc-sprite">
+                     <div id="specchIcon"><img  id="specchIconImag" src="speechIcon.png"></div>
+						<p class="counter" id="speechTex">Chat With Me</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_forex" onclick="demo();">
+					<i class="icon-options hdfc-sprite five"></i>
+					<div class="option-bg hdfc-sprite">
+                        <div id="others1Icon"><img  id="others1IconImag" src="others1.png"></div>
+						<p class="counter" id="otherText1">Addons</p>
+					</div>
+
+				</div>
+				<div class="column-two" id="choice_fixed_deposit" onclick="videocall();">
+
+					<i class="icon-options hdfc-sprite four"></i>
+					<div class="option-bg hdfc-sprite">
+                        <div id="videoIcon"><img  id="videoIconImag" src="videocalling.png"></div>
+						<p class="counter" id="videoTex">Call Incharge</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_others"  onclick="demo();">
+					<i class="icon-options hdfc-sprite six"></i>
+					<div class="option-bg hdfc-sprite">
+                        <div id="others2Icon"><img  id="others2IconImag" src="others2.png"></div>
+						<p class="otherscounter" id="otherText2">Addons1</p>
+					</div>
+				
+				</div> -->
+			</div>
+		</div>
+
+        <!-- <div class="modal fade" id="settingsModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalCenterTitle">Enter Settings Password</h5>
+                    
+                </div>
+                <div class="modal-body">
+                      
+                        <div class="valid">
+                            <p>Please Enter Valid Password.</p>
+                        </div>
+                        <form method="get" id="form1">
+                            <input type="number" name="code" value="" class="form-control display" id="settingsPass" placeholder="Password" maxlength="4" onfocus="showKeys()">
+                            <p id="message">Password length is 4 !</p>
+                            <table id="keypad" cellpadding="5" cellspacing="3">
+                                <tr>
+                                    <td onclick="addCode('1');">1</td>
+                                    <td onclick="addCode('2');">2</td>
+                                    <td onclick="addCode('3');">3</td>
+                                </tr>
+                                <tr>
+                                    <td onclick="addCode('4');">4</td>
+                                    <td onclick="addCode('5');">5</td>
+                                    <td onclick="addCode('6');">6</td>
+                                </tr>
+                                <tr>
+                                    <td onclick="addCode('7');">7</td>
+                                    <td onclick="addCode('8');">8</td>
+                                    <td onclick="addCode('9');">9</td>
+                                </tr>
+                                <tr>
+                                    <td onclick="backLetters();">Back </td>
+                                    <td onclick="addCode('0');">0</td>
+                                    <td onclick="ClearPassLet();">Clear</td>
+                                </tr>
+                            </table>
+                           
+                            
+                            </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close" onclick="Modalclose();" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="enterBtn" onclick="check_user('counter')">Ok</button>
+                </div>
+                </div>
+            </div>
+            </div> -->
+                       
+            <div class="modal fade" id="settingsModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" >
+                    <div class="modal-content" id="settingsModalContent">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="settingsModalCenterTitle">Enter Settings Password</h5>
+
+                    </div>
+                    <div class="modal-body" >
+                            <form method="get" id="form3">
+                                    <input type="number" name="code" value="" class="form-control display" id="settingsPassH" placeholder="Password" maxlength="4" onfocus="showKeys()">
+                                    <p id="messageH">Password length is 4 !</p>
+                                    <table id="keypad" cellpadding="5" cellspacing="3">
+                                        <tr>
+                                            <td onclick="addCodeH('1');">1</td>
+                                            <td onclick="addCodeH('2');">2</td>
+                                            <td onclick="addCodeH('3');">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td onclick="addCodeH('4');">4</td>
+                                            <td onclick="addCodeH('5');">5</td>
+                                            <td onclick="addCodeH('6');">6</td>
+                                        </tr>
+                                        <tr>
+                                            <td onclick="addCodeH('7');">7</td>
+                                            <td onclick="addCodeH('8');">8</td>
+                                            <td onclick="addCodeH('9');">9</td>
+                                        </tr>
+                                        <tr>
+                                            <td onclick="backLettersH();">Back </td>
+                                            <td onclick="addCodeH('0');">0</td>
+                                            <td onclick="ClearPassLetH();">Clear</td>
+                                        </tr>
+                                    </table>
+                                   
+                                    
+                                    </form>
+                            <!-- <input type="password" class="form-control" id="settingsPass" placeholder="Password" maxlength="4">
+                            <div class="valid">
+                                <p>Please Enter Valid Password.</p>
+                            </div> -->
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="close" onclick="Modalclose('1');" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="enterBtn" onclick="check_user('welcome')">Ok</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>
+            <footer>
+                    <!-- <div id="footer">
+                        test
+                    </div> -->
+                    <!-- <footer role="contentinfo">
+                           footer
+                        </footer> -->
+                       
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+                        
+                 <div class="centered1"> 
+                     
+                            <a href="#" id="back_home_id" onclick="nextPage('back_home');"><li><i  id="nextPage" class="fa fa-arrow-left counterPageBackBtn" aria-hidden="true">&nbsp;Back</i></a></li>
+                   
+                   
+
+                   
+                </div>
+                    </div> 
+                
+                </footer> 
+</div>	
+<!-- end Counter-->
+
+
+<!-- start Navigation session-->
+<div id="navigationPage">
+    <header id="navigationHeader">
+
+            <ul style="float:left">
+                <!-- <a href="#" onclick="nextPage('speech');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+            </ul>
+            <ul >   
+                <li>
+                    <!-- <div id="player1">
+                        <i class="fa fa-volume-down"></i>
+                        <div id="volume1"></div>
+                        <i class="fa fa-volume-up"></i>
+                    </div> -->
+                </li>
+                <li>
+                    <p id="time"></p>
+                </li>
+               
+            </ul>
+    </header>
+    <main class="background-image">
+
+        <div class="container-choice">
+			<h2 id="choiceText1">Tap on the Option of your Choice</h2>
+			<span class="hr-line"></span>
+			<div class="content">
+				<div class="column-two" id="choice_cash_withdrawal" onclick="counter1();">
+					<i class="icon-options hdfc-sprite one"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                         <div id="counter1Icon"><img  id="counter1IconImag" src="counter1.png"></div>
+						<p class="counter" id="counte1">Skin Care</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_cash_deposit" onclick="counter4();">
+					<i class="icon-options hdfc-sprite two"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                        <div id="counter4Icon"><img  id="counter4IconImag" src="counter4.png"></div>
+						<p class="counter"  id="counte4">Bath & Body</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_demat" onclick="counter2();">
+					<i class="icon-options hdfc-sprite three"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                        <div id="counter2Icon"><img  id="counter2IconImag" src="counter2.png"></div>
+						<p class="counter"  id="counte2">Make Up</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_forex" onclick="counter5();">
+					<i class="icon-options hdfc-sprite five"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                        <div id="counter5Icon"><img  id="counter5IconImag" src="counter5.png"></div>
+						<p class="counter"  id="counte5">Hair</p>
+					</div>
+
+				</div>
+				<div class="column-two" id="choice_fixed_deposit" onclick="counter3();">
+
+					<i class="icon-options hdfc-sprite four"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                        <div id="counter3Icon"><img  id="counter3IconImag" src="counter3.png"></div>
+						<p class="counter"  id="counte3">Fragrance</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_others" onclick="counter6();">
+					<i class="icon-options hdfc-sprite six"></i>
+					<div class="option-bg hdfc-sprite"  onclick="demo();">
+                        <div id="counter6Icon"><img  id="counter6IconImag" src="counter6.png"></div>
+						<p class="otherscounter"  id="counte6">Cosmetic</p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+                
+                        <!-- <ul style="float:left">
+                            <a href="#" onclick="nextPage('speech');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li>
+                        </ul> -->
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        <footer>
+                           
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1"  onclick="demo();"> <a href="#" onclick="nextPage('main');"><li><i  id="nextPage" class="fa fa-arrow-left navigationPageBackBtn" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                        </footer>   
+             </div>
+                         
+	
+<!-- end Navigation-->
+
+            <!-- start navigationPage_counter1 session-->
+            <div id="navigationPage_counter1">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo">1</h1>
+                             
+                                            
+                           </div>
+                           <div class="navigation" id="test34" onclick="inCounterBanigation1();">
+                                <h5 id="textField"  onclick="demo();">Navigation</h5>
+                           </div>
+                       </div>
+                       
+                       <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1"  onclick="demo();" id= "back_counter1" > <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter1" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter1-->
+             <!-- start navigationPage_counter2 session-->
+             <div id="navigationPage_counter2">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText1">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo">2</h1>
+                             
+                                            
+                           </div>
+                           
+                           <div class="navigation" id="test35" onclick="inCounterBanigation2();">
+                                <h5 id="textField1" onclick="demo();">Navigation</h5>
+                           </div>
+                           
+                       </div>
+                       
+                    <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1" onclick="demo();"  id= "back_counter2"> <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter2" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter2-->
+
+             <!-- start navigationPage_counter3 session-->
+             <div id="navigationPage_counter3">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText2">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo">3</h1>
+                             
+                                            
+                           </div>
+                           <div class="navigation" id="test36" onclick="inCounterBanigation3();">
+                                <h5 id="textField2" onclick="demo();">Navigation</h5>
+                           </div>
+                       </div>
+                       
+                       <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1" onclick="demo();" id= "back_counter3"> <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter3" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter3-->
+
+            <!-- start navigationPage_counter4 session-->
+            <div id="navigationPage_counter4">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText3">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo">4</h1>
+                             
+                                            
+                           </div>
+                           <div class="navigation" id="test37" onclick="inCounterBanigation4();">
+                                <h5 id="textField3" onclick="demo();">Navigation</h5>
+                           </div>
+                       </div>
+                       
+                       <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1" onclick="demo();" id= "back_counter4"> <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter4" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter4-->
+
+            <!-- start navigationPage_counter5 session-->
+            <div id="navigationPage_counter5">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText4">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo">5</h1>
+                             
+                                            
+                           </div>
+                           <div class="navigation" id="test38" onclick="inCounterBanigation5();">
+                                <h5 id="textField4" onclick="demo();">Navigation</h5>
+                           </div>
+                       </div>
+                       
+                       <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1" onclick="demo();" id= "back_counter5"> <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter5" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter5-->
+
+             <!-- start navigationPage_counter6 session-->
+             <div id="navigationPage_counter6">
+                    <header >
+                            <ul style="float:left;">
+                                <li>
+                                    <p id="time1"></p>
+                                </li>
+                                <!-- <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                            </ul>
+                    </header>
+                    <main class="background-options">
+                           
+                       <div class="container">
+                    
+                           <h3 class="headW"><center class="head" id="counterNumnerText5">Please Proceed to Counter Number</center></h3>
+                           <div class="count">
+                              <h1 class="countNo" onclick="demo();">6</h1>
+
+                           </div>
+                           <div class="navigation" id="test39" onclick="inCounterBanigation6();">
+                                <h5 id="textField5">Navigation</h5>
+                           </div>
+                       </div>
+                       
+                       <footer>
+                        <div class="divLog">
+                            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                        </div>
+                        </main>
+                        <div class="enterBtn1" id="enterBtn" >
+                       
+                         <div class="centered1" onclick="demo();"  id= "back_counter6"> <a href="#" onclick="nextPage('counters');"><li><i  id="nextPage" class="fa fa-arrow-left counter6" aria-hidden="true">&nbsp;Back</i></a></li></div>
+                         </div> 
+                        
+                    </footer>  
+            </div>  
+            <!-- end navigationPage_counter6-->
+<!-- start speechPage session-->
+<div id="speechPage">
+    <header >
+             <ul style="float:left">
+                 <li>
+                     <p id="time1"></p>
+                 </li>
+                 <!-- <a href="#" onclick="nextPage('speech');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a> -->
+                <!-- </li> -->
+             </ul>
+     </header>
+     <main class="background-image">
+ 
+ 
+             <div class="class-allpage container-index">
+                 <div class="container-logo-caption" >
+                     <h3 id="talkToMe">Talk to me!!</h3>
+                      
+                        <div class="google-microphone"><div class="shadow listening"><div class="gn"><div class="mc"></div></div></div></div>
+                 </div>
+         
+             </div>
+ 
+             <div class="divLog">
+                <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+            </div>  
+             <footer>
+                    
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+               
+                 <div class="centered1"> 
+                    <a href="#" onclick="nextPage('speech');"><li><i  id="nextPage" class="fa fa-arrow-left speechPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div> 
+                
+            </footer>  
+</div>	
+<!-- end speechPage-->
+
+<!-- start video call session-->
+<div id="videoPage">
+        <header >
+                 <ul style="float:left;">
+                     <li>
+                         <p id="time1"></p>
+                     </li>
+                     <!-- <a href="#" onclick="nextPage('speech');"><li><i  id="nextPage" class="fa fa-arrow-left " aria-hidden="true">&nbsp;Back</i></a> -->
+                    <!-- </li> -->
+                 </ul>
+         </header>
+         <main class="background-image">
+                
+                <div id="container">
+               
+                        <!-- <div class="skype-button bubble" data-contact-id="live:nirmalthomas"></div> -->
+                        <div class="skype-button bubble" 	data-contact-id="live:nirmalthomas"></div>
+                      
+                     <h1 id="chatTextBtn">Click To Start</h1>
+                </div>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>   
+                
+                <footer>
+                              
+                    </main>
+                    <div class="enterBtn1" id="enterBtn" >
+                   
+                     <div class="centered1"> 
+                            <a href="#" onclick="nextPage('main');"><li><i  id="nextPage" class="fa fa-arrow-left videoPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                    </div>
+                     </div> 
+                    
+                </footer>  
+    </div>	
+    <!-- end video-->
+
+
+    <!-- start Reason for visiting session-->
+<div id="reasonForVisitingPage">
+    <header id="reasonForVisitingPageHeader">
+<ul style="float:left;">
+        
+</ul>
+            <ul >   
+                <li>
+                    
+                </li>
+                <li>
+                    <p id="time1"></p>
+                </li>
+              
+              
+            </ul>
+    </header>
+    <main class="background-image">
+
+        <div class="container-choice">
+			<h2 id="othersChoise">Tap on the Option of your Choice</h2>
+			<span class="hr-line"></span>
+			<div class="content">
+				<div class="column-two" id="choice_cash_withdrawal" onclick="others1();">
+					<i class="icon-options hdfc-sprite one"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="counter" id="re_other1">Others 1</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_cash_deposit" onclick="others4()">
+					<i class="icon-options hdfc-sprite two"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="others4" id="re_other4">Others 4</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_demat" onclick="others2();">
+					<i class="icon-options hdfc-sprite three"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="counter" id="re_other2">Others 2</p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_forex" onclick="others5()">
+					<i class="icon-options hdfc-sprite five"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="counter" id="re_other5">Others 5</p>
+					</div>
+
+				</div>
+				<div class="column-two" id="choice_fixed_deposit" onclick="others3();">
+
+					<i class="icon-options hdfc-sprite four"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="counter" id="re_other3">Others 3 </p>
+					</div>
+				</div>
+				<div class="column-two" id="choice_others" onclick="others6()">
+					<i class="icon-options hdfc-sprite six"></i>
+					<div class="option-bg hdfc-sprite">
+						<p class="otherscounter" id="re_reason">Reason </p>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+        <div class="divLog">
+            <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+        </div> 
+              
+        <footer>
+                      
+            </main>
+            <div class="enterBtn1" id="enterBtn" >
+           
+             <div class="centered1"> 
+                    <a href="#" onclick="nextPage('reason');"><li><i  id="nextPage" class="fa fa-arrow-left reasonForVisitingPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+            </div>
+             </div> 
+            
+        </footer>  
+</div>	
+<!-- end reasonForVisitingPage-->
+<!-- start others6Page session-->
+<div id="others6Page">
+        <header >
+                <ul style="float:left;">
+                        <!-- <a href="#" onclick="nextPage('visterPage');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
+                </ul>
+                <ul >
+                    <li>
+                        <p id="time1"></p>
+                    </li>
+
+                </ul>
+        </header>
+        <main class="background-image otherpageClass" id="keyboard">
+          <h2 id="visitHead">Reason For Visit</h2>
+        <form id="test-form">
+                <!-- <input type="text" class="onscreenKeyboardTarget" autofocus="true" />
+                <input type="text" class="onscreenKeyboardTarget" autofocus="true" /> -->
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                        <div class="form-group" id="nameDiv">
+                            <label id="vName">Name:</label>
+                            <input type="text" class="form-control onscreenKeyboardTarget" name="Name" id="visiter_name" autofocus="true" placeholder="Name" >
+                        
+                        </div> 
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group" id="ageDiv">
+                            <label id="vAge">Age:</label>
+                            <input type="text" class="form-control onscreenKeyboardTarget" name="Age" id="visiter_age" autofocus="true"  placeholder="age">
+                        </div>      
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                        <div class="col-12">
+                        <div class="form-group" id="reason">
+                            <label id="vReason">Reason for visiting:</label>
+                            <input  type="text"  class="form-control onscreenKeyboardTarget"  id="Visite_reason"  name="Reason" autofocus="true" placeholder="Reason for visiting">
+                        </div> 
+                    </div>    
+                    </div>
+                    <div class="saveBtn">
+                        <button type="button" id="saveVisitData"  class="btn btn-success">Save</button> 
+                    </div>
+                <div class="onscreenKeyboard"></div>
+                <div class="divLog">
+                    <img class="imgLog" src="../assets/images/1200px-ESAF_Bank_Logo1.png">
+                </div>     
+            
+        </form> 
+             
+            <footer>
+                   
+                </main>
+                <div class="enterBtn1" id="enterBtn" >
+               
+                 <div class="centered1"> 
+                        <a href="#" onclick="nextPage('visterPage');"><li><i  id="nextPage" class="fa fa-arrow-left others6PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div> 
+                
+            </footer>  
+</div>	
+<!-- end others6Page-->
+
+<script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+
+
+<script type="text/javascript" src="../assets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-4.1.1/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/eventemitter2.min.js"></script>
+<script type="text/javascript" src="../assets/js/roslib.min.js"></script>
+<script type="text/javascript" src="../assets/js/script.js"></script>
+<script type="text/javascript" src="../assets/js/inactive.js"></script>
+<script type="text/javascript" src="../assets/js/data.js"></script>
+<script type="text/javascript" src="../assets/js/index.js"></script>
+<script type="text/javascript" src="../assets/js/mjpegcanvas.min.js"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/caret/1.0.0/jquery.caret.min.js"></script>
+    <script src="jquery.onscreenKeyboard.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('.onscreenKeyboard').onscreenKeyboard({
+                caps: false
+            });
+        });
+
+    </script>
+<script>
+        var videoId = 'video';
+    var scaleFactor = 0.25;
+    var snapshots = [];
+    /**
+     * Captures a image frame from the provided video element.
+     *
+     * @param {Video} video HTML5 video element from where the image frame will be captured.
+     * @param {Number} scaleFactor Factor to scale the canvas element that will be return. This is an optional parameter.
+     *
+     * @return {Canvas}
+     */
+    function capture(video, scaleFactor) {
+        if(scaleFactor == null){
+            scaleFactor = 1;
+        }
+        var w = video.videoWidth * scaleFactor;
+        var h = video.videoHeight * scaleFactor;
+        var canvas = document.createElement('canvas');
+        canvas.setAttribute("id", "canvasId");
+            canvas.width  = w;
+            canvas.height = h;
+        var ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, w, h);
+        return canvas;
+    }
+    /**
+     * Invokes the <code>capture</code> function and attaches the canvas element to the DOM.
+     */
+    function shoot(){
+        var video  = document.getElementById(videoId);
+        var output = document.getElementById('output');
+        var canvas = capture(video, scaleFactor);
+
+            canvas.onclick = function(){
+                window.open(this.toDataURL());
+            };
+
+        snapshots.unshift(canvas);
+        output.innerHTML = '';
+        // $("#output").remove();
+        for(var i=0; i<4; i++){
+
+            output.appendChild(snapshots[i]);
+            // console.log($("#output")[0].childNodes);
+          if(i == 0){
+        //    console.log(i)
+        }else if(i == 1){
+            // console.log();
+            $("#output")[0].childNodes[1].style.display = 'none';
+            // var list = document.getElementById("output");
+            //   list.removeChild(list.childNodes[1]);
+        }else if(i >3){
+            // console.log('test')
+        }
+        }
+    }
+    </script>
+
+</body>
+</html>
+
+

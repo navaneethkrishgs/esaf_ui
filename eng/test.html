@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8" />
+  <title>jqKeyboard Demo</title>
+  <!-- <link rel="stylesheet" href="jquery.keypad.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/gh/hawkgs/jqKeyboard/development/build/jqkeyboard.js"></script> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+<script>
+ 
+
+</script>
+
+</head>
+
+<body >
+    <button type="button" class="btn btn-primary" onclick="start()">start</button>
+    <button type="button" class="btn btn-primary" onclick="Stop()">Stop</button>  
+    <button type="button" class="btn btn-primary" onclick="Reset()">Reset</button>  
+    <button type="button" class="btn btn-primary" onclick="Click()">Click</button>     
+
+
+<script>
+   localStorage.setItem('inte','start');
+    function start() {
+        
+        var time = localStorage.getItem('inte');
+        if(time == 'start'){
+            begin = setInterval(countdown, 1000);
+        }else{
+            console.log('stop');
+            clearInterval(begin)
+        }
+
+    }
+
+
+    function Reset(){
+        start();
+        localStorage.setItem('inte','start');
+    }
+
+    function countdown(){
+        var time = localStorage.getItem('inte');
+        if(time == 'start'){
+            console.log('countdown');
+        }
+       
+    }
+
+
+
+    function Stop(){
+        start();
+        localStorage.setItem('inte','stop');
+    }
+
+ 
+
+
+//  var int1;
+// var func = function () {
+//     // do stuff
+
+//     if(){
+//         clearInterval(int1); 
+//         setTimeout(func, 60000);
+//     }
+// };
+// int1 = setInterval(func, 1000);
+</script>
+</body>
+</html>
