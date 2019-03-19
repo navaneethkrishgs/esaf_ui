@@ -30,7 +30,7 @@ localStorage.setItem('inte','start');
         _idleSecondsCounter = 0;
        
         localStorage.setItem('inte','start');
-        start();
+        // start();
     }
 
     function countdown(){

@@ -51,7 +51,7 @@ $(".setModal").click(function(){
         
     
         $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbzlUuVZc08ThqioH2cFtHbKE07er36DKc048wE0GWi80koyD7WS/exec',
+            url: 'https://script.google.com/macros/s/AKfycbwwZclHATUbIawJlDoUTkf6_0l07yxx2SkqZ427fvFi5eOi2es/exec',
             type: 'GET',
             data: formData,
             // async: false,
@@ -702,7 +702,7 @@ function check_user(pageSettings){
     $('#settingsModalCenter').modal('hide');
     // $(".indexpageClass").removeAttr('id');
  if(pageSettings == 'welcome'){
-    Stop();
+    
     val =  $("#settingsPass").val();
     val1 = $("#settingsPassH").val();
     console.log(val1);
@@ -720,13 +720,13 @@ function check_user(pageSettings){
     var enteredPassword =  $("#settingsPass").val();
    
     if(savedPassword == enteredPassword){
-
-        $("#settingsPass").val('');
-        $("#settingsPass").val('');
-        $("#indexPage").hide();
         $("#settingsPage").show();
         $("#body").removeClass("modal-open");
         $(".modal-backdrop  ").addClass('modal');
+        $("#settingsPass").val('');
+        $("#settingsPass").val('');
+        $("#indexPage").hide();
+
         $("#message").hide();
        
 
@@ -831,10 +831,11 @@ function nextPage(nextPage){
     // startTimer();
       $("#indexPage").hide();  
       $("#welcomePage").show();
-      setTimeout(function(){ start();  $("#welcomePage").hide(); $(".settingsPageBackBtn1").hide();$(".settingsPageBackBtn").show(); $("#counterPage").show(); $("#settingsBtn3").show() },2000);
+      setTimeout(function(){  $("#welcomePage").hide(); $(".settingsPageBackBtn1").hide();$(".settingsPageBackBtn").show(); $("#counterPage").show(); $("#settingsBtn3").show() },2000);
+    //   start(); 
   }else if(nextPage == "speech"){
   
-    start();
+    // start();
     $(".skype-chat").hide(); /////skype hide
       var speech_value = new ROSLIB.Message({
       data : 'false'
@@ -850,7 +851,7 @@ function nextPage(nextPage){
      
       
   }else if(nextPage == "main"){
-    start();
+    // start();
 
     $(".skype-chat").hide(); /////skype hide
       
@@ -927,7 +928,7 @@ else if(nextPage == "reason"){
     $("#reasonForVisitingPage").hide();
     $("#counterPage").show();
 }else if(nextPage == 'visterPage'){
-    start();
+    // start();
     $("#others6Page").hide();
     $("#counterPage").show();
     //$("#reasonForVisitingPage").show();
