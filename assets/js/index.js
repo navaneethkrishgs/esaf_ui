@@ -248,7 +248,7 @@ var langChange= localStorage.getItem('langChange');
         $("#counte2").css('padding-top','6%');
 
         $("#counte3").text('DIG प्रशासन अनुभाग');
-        $("#counte3").css('font-size','40px');
+        $("#counte3").css('font-size','33px');
         $("#counte3").css('padding-top','6%');
 
         $("#counte4").text('रिसेप्शन');
@@ -713,13 +713,18 @@ function check_user(pageSettings){
     }else{
       
     //   localStorage.setItem('settingsPassword',val);
-    var userId = 1;
-     firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-    var savedPassword = (snapshot.val() && snapshot.val().password) || 'Anonymous';
-    console.log('saved password'+ ' '+ savedPassword);
-    var enteredPassword =  $("#settingsPass").val();
-   
-    if(savedPassword == enteredPassword){
+    let userdata = {
+        "username": $("#settingsPass").val(),
+        "password": $("#settingsPass").val()
+    }
+
+    axios.post('http://localhost:7770/auths/users', userdata)
+    .then( res =>
+    {
+        console.log(res);
+        localStorage.setItem('accessToken',res.data.accessToken);
+        localStorage.setItem('refreshToken',res.data.refreshToken);
+        localStorage.setItem('usersid',res.data.users.usersid);
         $("#settingsPage").show();
         $("#body").removeClass("modal-open");
         $(".modal-backdrop  ").addClass('modal');
@@ -728,21 +733,17 @@ function check_user(pageSettings){
         $("#indexPage").hide();
 
         $("#message").hide();
-       
 
-    }else{
-        $("#message").hide();
-        $("#settingsPass").val('');
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'Incorrect Password !',
-            // footer: '<a href>Why do I have this issue?</a>'
-          });
-         
-    }
-    });
-    
+     }).catch( err => {
+         console.log(err.data); 
+         $("#message").hide();
+         $("#settingsPass").val('');
+         Swal.fire({
+             type: 'error',
+             title: 'Oops...',
+             text: 'Incorrect Password !',
+           });
+        });
      
       //setTimeout(function(){ $("#welcomePage").hide(); $("#counterPage").show() },2000);
     }
@@ -755,33 +756,36 @@ function check_user(pageSettings){
       }else{
         
       //   localStorage.setItem('settingsPassword',val);
-      var userId = 1;
-       firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-      var savedPassword = (snapshot.val() && snapshot.val().password) || 'Anonymous';
-      console.log('saved password'+ ' '+ savedPassword);
-      var enteredPassword =  $("#settingsPassH").val();
-      if(savedPassword == enteredPassword){
-          $("#settingsPassH").val('');
-          $("#settingsPassH").val('');
-          $("#indexPage").hide();
-          $("#settingsPage").show();
-          $("#body").removeClass("modal-open");
-          $(".modal-backdrop  ").addClass('modal');
-          $("#messageH").hide();
-        //   $(".homeSetBtn").hide();
-          $("#counterPage").hide();
-      }else{
-          $("#messageH").hide();
-        //   $(".homeSetBtn").hide();
-          $("#settingsPassH").val('');
-        //   $("#counterPage").hide();
-          Swal.fire({
-              type: 'error',
-              title: 'Oops...',
-              text: 'Incorrect Password !',
-            });
-      }
-      });
+      let userdata = {
+        "username": $("#settingsPassH").val(),
+        "password": $("#settingsPassH").val()
+    }
+
+    axios.post('http://localhost:7770/auths/users', userdata)
+    .then( res =>
+    {
+        console.log(res);
+        localStorage.setItem('accessToken',res.data.accessToken);
+        localStorage.setItem('refreshToken',res.data.refreshToken);
+        localStorage.setItem('usersid',res.data.users.usersid);
+        $("#settingsPassH").val('');
+        $("#settingsPassH").val('');
+        $("#indexPage").hide();
+        $("#settingsPage").show();
+        $("#body").removeClass("modal-open");
+        $(".modal-backdrop  ").addClass('modal');
+        $("#messageH").hide();
+        $("#counterPage").hide();
+     }).catch( err => {
+         console.log(err.data); 
+         $("#messageH").hide();
+           $("#settingsPassH").val('');
+           Swal.fire({
+               type: 'error',
+               title: 'Oops...',
+               text: 'Incorrect Password !',
+             });
+        });
       }
 
  }
@@ -907,6 +911,9 @@ function nextPage(nextPage){
     //   $("#back_home_id").removeAttr('onclick');
  } else if(nextPage == "settings"){
     Reset();
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('accessToken');
     $("#settingsPage").hide();
     $("#counterPage").show();
     // $("#indexPage").show();
@@ -915,12 +922,16 @@ function nextPage(nextPage){
     
 } else if(nextPage == "settings1"){
 
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('accessToken');
+    $("#settingsModalCenter3").modal('hide')
+
     $("#settingsPage").hide();
     $("#indexPage").show();
     // $("#settingsBtn3").show()
     // $("#indexPage").show();
     $(".homeSetBtn").show();
-    $("#settingsModalCenter3").modal('hide')
     
 }
 else if(nextPage == "reason"){
@@ -1099,25 +1110,37 @@ function saveVisitData(){
 }
 function changePassW(){
 
-    // var cngPass = $("#changePassText").val();
-     // Write the new post's data simultaneously in the posts list and the user's post list.
+    var userId = localStorage.getItem('usersid');
      var postData = {
-        password: $("#changePassTextVal").val()
+         'username':  $("#changePassTextVal").val(),
+        'password': $("#changePassTextVal").val()
        };
-       var updates = {};
-       var uid = 1;
-       updates['/users/' + uid] = postData;
-       firebase.database().ref().update(updates);
-       $("#exampleModal1").modal('hide');
-       $("#changePassTextVal").val('');
-       $("#message1").hide();
-       Swal.fire({
-        position: 'top-end',
-        type: 'success',
-        title: 'Successfully saved',
-        showConfirmButton: false,
-        timer: 1500
-    });
+       axios.put('http://localhost:7770/secure/users/'+userId+'',postData)
+       .then( res =>
+       {
+        //    console.log(res)
+        $("#exampleModal1").modal('hide');
+        $("#changePassTextVal").val('');
+        $("#message1").hide();
+        Swal.fire({
+            position: 'top-end',
+            type: 'success',
+            title: 'Successfully saved',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+         }).catch( err => {
+            console.log(err.data); 
+            $("#exampleModal1").modal('hide');
+            $("#changePassTextVal").val('');
+            $("#message1").hide();
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'update error!',
+              });
+       });
 }
 function themeChange(){
 
@@ -1661,6 +1684,9 @@ function ClearPassLetUp(){
 
 ////////////////////all page  refresh
 function allPageRefresh(){
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('usersid');
     window.location.reload(true); 
 }
 
