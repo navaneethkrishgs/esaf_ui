@@ -13,15 +13,15 @@ $(document).ready(function(){
     /////////////////for firebase 
 
 
-var config = {
-    apiKey: "AIzaSyDMkgGh69rv-4OuD0iorUNi7wpoRHVSQwU",
-    authDomain: "asimovrobotics-80c9f.firebaseapp.com",
-    databaseURL: "https://asimovrobotics-80c9f.firebaseio.com",
-    projectId: "asimovrobotics-80c9f",
-    storageBucket: "asimovrobotics-80c9f.appspot.com",
-    messagingSenderId: "309600775453"
-  };
-  firebase.initializeApp(config);   
+    var config = {
+        apiKey: "AIzaSyDzuC2leIcH5sh8H581-S4uiWtOGhs42iE",
+        authDomain: "esaflogin.firebaseapp.com",
+        databaseURL: "https://esaflogin.firebaseio.com",
+        projectId: "esaflogin",
+        storageBucket: "esaflogin.appspot.com",
+        messagingSenderId: "531885596650"
+      };
+      firebase.initializeApp(config);
   //////////////////to generate a user
 //   var userId = 1;
 //   firebase.database().ref('users/' + userId).set({
@@ -29,7 +29,9 @@ var config = {
 //       },function(error) {
 //           if (error) {
 //             // The write failed...
+//             console.log('The write failed...')
 //           } else {
+//               console.log('Data saved successfully!')
 //             // Data saved successfully!
 //           }
 //         });
@@ -713,38 +715,66 @@ function check_user(pageSettings){
     }else{
       
     //   localStorage.setItem('settingsPassword',val);
-    let userdata = {
-        "username": $("#settingsPass").val(),
-        "password": $("#settingsPass").val()
-    }
+    // let userdata = {
+    //     "username": $("#settingsPass").val(),
+    //     "password": $("#settingsPass").val()
+    // }
 
-    axios.post('http://localhost:7770/auths/users', userdata)
-    .then( res =>
-    {
-        console.log(res);
-        localStorage.setItem('accessToken',res.data.accessToken);
-        localStorage.setItem('refreshToken',res.data.refreshToken);
-        localStorage.setItem('usersid',res.data.users.usersid);
-        $("#settingsPage").show();
-        $("#body").removeClass("modal-open");
-        $(".modal-backdrop  ").addClass('modal');
+    // axios.post('http://localhost:7770/auths/users', userdata)
+    // .then( res =>
+    // {
+    //     console.log(res);
+    //     localStorage.setItem('accessToken',res.data.accessToken);
+    //     localStorage.setItem('refreshToken',res.data.refreshToken);
+    //     localStorage.setItem('usersid',res.data.users.usersid);
+    //     $("#settingsPage").show();
+    //     $("#body").removeClass("modal-open");
+    //     $(".modal-backdrop  ").addClass('modal');
+    //     $("#settingsPass").val('');
+    //     $("#settingsPass").val('');
+    //     $("#indexPage").hide();
+
+    //     $("#message").hide();
+
+    //  }).catch( err => {
+    //      console.log(err.data); 
+    //      $("#message").hide();
+    //      $("#settingsPass").val('');
+    //      Swal.fire({
+    //          type: 'error',
+    //          title: 'Oops...',
+    //          text: 'Incorrect Password !',
+    //        });
+    //     });
+    var userId = 1;
+     firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+    var savedPassword = (snapshot.val() && snapshot.val().password) || 'Anonymous';
+    console.log('saved password'+ ' '+ savedPassword);
+    var enteredPassword =  $("#settingsPass").val();
+   
+    if(savedPassword == enteredPassword){
+
         $("#settingsPass").val('');
         $("#settingsPass").val('');
         $("#indexPage").hide();
-
+        $("#settingsPage").show();
+        $("#body").removeClass("modal-open");
+        $(".modal-backdrop  ").addClass('modal');
         $("#message").hide();
+       
 
-     }).catch( err => {
-         console.log(err.data); 
-         $("#message").hide();
-         $("#settingsPass").val('');
-         Swal.fire({
-             type: 'error',
-             title: 'Oops...',
-             text: 'Incorrect Password !',
-           });
-        });
-     
+    }else{
+        $("#message").hide();
+        $("#settingsPass").val('');
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Incorrect Password !',
+            // footer: '<a href>Why do I have this issue?</a>'
+          });
+         
+    }
+    });
       //setTimeout(function(){ $("#welcomePage").hide(); $("#counterPage").show() },2000);
     }
    
@@ -756,36 +786,63 @@ function check_user(pageSettings){
       }else{
         
       //   localStorage.setItem('settingsPassword',val);
-      let userdata = {
-        "username": $("#settingsPassH").val(),
-        "password": $("#settingsPassH").val()
-    }
+    //   let userdata = {
+    //     "username": $("#settingsPassH").val(),
+    //     "password": $("#settingsPassH").val()
+    // }
 
-    axios.post('http://localhost:7770/auths/users', userdata)
-    .then( res =>
-    {
-        console.log(res);
-        localStorage.setItem('accessToken',res.data.accessToken);
-        localStorage.setItem('refreshToken',res.data.refreshToken);
-        localStorage.setItem('usersid',res.data.users.usersid);
-        $("#settingsPassH").val('');
-        $("#settingsPassH").val('');
-        $("#indexPage").hide();
-        $("#settingsPage").show();
-        $("#body").removeClass("modal-open");
-        $(".modal-backdrop  ").addClass('modal');
-        $("#messageH").hide();
-        $("#counterPage").hide();
-     }).catch( err => {
-         console.log(err.data); 
-         $("#messageH").hide();
-           $("#settingsPassH").val('');
-           Swal.fire({
-               type: 'error',
-               title: 'Oops...',
-               text: 'Incorrect Password !',
-             });
-        });
+    // axios.post('http://localhost:7770/auths/users', userdata)
+    // .then( res =>
+    // {
+    //     console.log(res);
+    //     localStorage.setItem('accessToken',res.data.accessToken);
+    //     localStorage.setItem('refreshToken',res.data.refreshToken);
+    //     localStorage.setItem('usersid',res.data.users.usersid);
+    //     $("#settingsPassH").val('');
+    //     $("#settingsPassH").val('');
+    //     $("#indexPage").hide();
+    //     $("#settingsPage").show();
+    //     $("#body").removeClass("modal-open");
+    //     $(".modal-backdrop  ").addClass('modal');
+    //     $("#messageH").hide();
+    //     $("#counterPage").hide();
+    //  }).catch( err => {
+    //      console.log(err.data); 
+    //      $("#messageH").hide();
+    //        $("#settingsPassH").val('');
+    //        Swal.fire({
+    //            type: 'error',
+    //            title: 'Oops...',
+    //            text: 'Incorrect Password !',
+    //          });
+    //     });
+    var userId = 1;
+       firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+      var savedPassword = (snapshot.val() && snapshot.val().password) || 'Anonymous';
+      console.log('saved password'+ ' '+ savedPassword);
+      var enteredPassword =  $("#settingsPassH").val();
+      if(savedPassword == enteredPassword){
+          $("#settingsPassH").val('');
+          $("#settingsPassH").val('');
+          $("#indexPage").hide();
+          $("#settingsPage").show();
+          $("#body").removeClass("modal-open");
+          $(".modal-backdrop  ").addClass('modal');
+          $("#messageH").hide();
+        //   $(".homeSetBtn").hide();
+          $("#counterPage").hide();
+      }else{
+          $("#messageH").hide();
+        //   $(".homeSetBtn").hide();
+          $("#settingsPassH").val('');
+        //   $("#counterPage").hide();
+          Swal.fire({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Incorrect Password !',
+            });
+      }
+      });
       }
 
  }
@@ -911,9 +968,9 @@ function nextPage(nextPage){
     //   $("#back_home_id").removeAttr('onclick');
  } else if(nextPage == "settings"){
     Reset();
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('accessToken');
+    // localStorage.removeItem('accessToken');
+    // localStorage.removeItem('refreshToken');
+    // localStorage.removeItem('accessToken');
     $("#settingsPage").hide();
     $("#counterPage").show();
     // $("#indexPage").show();
@@ -922,9 +979,10 @@ function nextPage(nextPage){
     
 } else if(nextPage == "settings1"){
 
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('accessToken');
+    // localStorage.removeItem('accessToken');
+    // localStorage.removeItem('refreshToken');
+    // localStorage.removeItem('accessToken');
+    $('#settingsBtn3').show();
     $("#settingsModalCenter3").modal('hide')
 
     $("#settingsPage").hide();
@@ -1110,37 +1168,54 @@ function saveVisitData(){
 }
 function changePassW(){
 
-    var userId = localStorage.getItem('usersid');
-     var postData = {
-         'username':  $("#changePassTextVal").val(),
-        'password': $("#changePassTextVal").val()
-       };
-       axios.put('http://localhost:7770/secure/users/'+userId+'',postData)
-       .then( res =>
-       {
-        //    console.log(res)
-        $("#exampleModal1").modal('hide');
-        $("#changePassTextVal").val('');
-        $("#message1").hide();
-        Swal.fire({
-            position: 'top-end',
-            type: 'success',
-            title: 'Successfully saved',
-            showConfirmButton: false,
-            timer: 1500
-        });
+    // var userId = localStorage.getItem('usersid');
+    //  var postData = {
+    //      'username':  $("#changePassTextVal").val(),
+    //     'password': $("#changePassTextVal").val()
+    //    };
+    //    axios.put('http://localhost:7770/secure/users/'+userId+'',postData)
+    //    .then( res =>
+    //    {
+    //     //    console.log(res)
+    //     $("#exampleModal1").modal('hide');
+    //     $("#changePassTextVal").val('');
+    //     $("#message1").hide();
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         type: 'success',
+    //         title: 'Successfully saved',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //     });
 
-         }).catch( err => {
-            console.log(err.data); 
-            $("#exampleModal1").modal('hide');
-            $("#changePassTextVal").val('');
-            $("#message1").hide();
-            Swal.fire({
-                type: 'error',
-                title: 'Oops...',
-                text: 'update error!',
-              });
-       });
+    //      }).catch( err => {
+    //         console.log(err.data); 
+    //         $("#exampleModal1").modal('hide');
+    //         $("#changePassTextVal").val('');
+    //         $("#message1").hide();
+    //         Swal.fire({
+    //             type: 'error',
+    //             title: 'Oops...',
+    //             text: 'update error!',
+    //           });
+    //    });
+    var postData = {
+        password: $("#changePassTextVal").val()
+       };
+       var updates = {};
+       var uid = 1;
+       updates['/users/' + uid] = postData;
+       firebase.database().ref().update(updates);
+       $("#exampleModal1").modal('hide');
+       $("#changePassTextVal").val('');
+       $("#message1").hide();
+       Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Successfully saved',
+        showConfirmButton: false,
+        timer: 1500
+    });
 }
 function themeChange(){
 
