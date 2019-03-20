@@ -38,7 +38,7 @@ localStorage.setItem('inte','start');
         var time = localStorage.getItem('inte');
         if(time == 'start'){
             console.log(_idleSecondsCounter);
-            if(_idleSecondsCounter >= 12000){
+            if(_idleSecondsCounter >= 2000){
             console.log('time out');
             var speech_value = new ROSLIB.Message({
                data : 'true'
