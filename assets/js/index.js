@@ -1333,8 +1333,9 @@ function inCounterBanigation1(){
       //document.getElementById("back_counter1").style.visibility = "visible";
 
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+     var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1349,10 +1350,9 @@ function inCounterBanigation1(){
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 
@@ -1381,8 +1381,9 @@ Stop();
       //document.getElementById("back_counter2").style.visibility = "visible";
       // $(".counter2").show();
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1397,10 +1398,9 @@ Stop();
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+     var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 
@@ -1429,8 +1429,9 @@ Stop();
       //document.getElementById("back_counter3").style.visibility = "visible";
       // $(".counter3").show();
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1445,10 +1446,9 @@ Stop();
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 }
@@ -1475,8 +1475,9 @@ Stop();
       //document.getElementById("back_counter4").style.visibility = "visible";
       // $(".counter4").show();
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1491,10 +1492,9 @@ Stop();
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+   var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 }
@@ -1521,8 +1521,9 @@ Stop();
       //document.getElementById("back_counter5").style.visibility = "visible";
        // $(".counter5").show();
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1537,10 +1538,9 @@ Stop();
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+     var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 
@@ -1568,8 +1568,9 @@ Stop();
       //document.getElementById("back_counter6").style.visibility = "visible";
        // $(".counter6").show();
     console.log('backIon')
-      ui_refresh.publish(str);
-      sleep(300);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
       $("#indexPage").show();
       $("#welcomePage").hide();
@@ -1584,10 +1585,9 @@ Stop();
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
   });
 
