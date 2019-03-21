@@ -945,9 +945,11 @@ function nextPage(nextPage){
 
       console.log('backIon');
       Stop();
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+  });
       ui_refresh.publish(str);
-      sleep(300);
-      ui_refresh.publish(str);
+      
       $("#indexPage").show();
       $("#welcomePage").hide();
       $("#settingsPage").hide();
@@ -961,10 +963,9 @@ function nextPage(nextPage){
       $("#navigationPage_counter4").hide();
       $("#navigationPage_counter5").hide();
       $("#navigationPage_counter6").hide();
-       ui_refresh.publish(str);
-      sleep(3000);
-      ui_refresh.publish(str);
-      sleep(3000);
+      var speech_value = new ROSLIB.Message({
+      data : 'true'
+         });
       ui_refresh.publish(str);
     //   $("#back_home_id").removeAttr('onclick');
  } else if(nextPage == "settings"){
