@@ -241,29 +241,30 @@ var langChange= localStorage.getItem('langChange');
         $("#navigatio").css('font-size','40px');
         $("#navigatio").css('padding-top','18px');
         //// navigation page
-        $("#counte1").text('याचिका');
+        $("#counte1").text('चालू खाता');
         $("#counte1").css('font-size','40px');
         $("#counte1").css('padding-top','6%');
 
-        $("#counte2").text('DIG चैंबर');
+        $("#counte2").text('बचत खाता');
         $("#counte2").css('font-size','40px');
         $("#counte2").css('padding-top','6%');
 
-        $("#counte3").text('DIG प्रशासन अनुभाग');
+        $("#counte3").text('सावधि जमा');
         $("#counte3").css('font-size','33px');
         $("#counte3").css('padding-top','6%');
 
-        $("#counte4").text('रिसेप्शन');
+        $("#counte4").text('गोल्ड लोन');
         $("#counte4").css('font-size','30px');
         $("#counte4").css('padding-top','8%');
 
-        $("#counte5").text('ऐड ऑन');
+        $("#counte5").text('लोन');
         $("#counte5").css('font-size','40px');
         $("#counte5").css('padding-top','6%');
 
-        $("#counte6").text('ऐड ऑन');
+        $("#counte6").text('टेलर');
         $("#counte6").css('font-size','40px');
         $("#counte6").css('padding-top','6%');
+
 
         //////counter number session
         $("#counterNumnerText").text('कृपया काउंटर नंबर पर आगे बढ़ें')
@@ -332,27 +333,27 @@ var langChange= localStorage.getItem('langChange');
              $("#videoTex").css('font-size','22px');
              $("#videoTex").css('padding-top','38px');
          /////navigation page
-         $("#counte1").text('Petition');
-         $("#counte1").css('font-size','25px');
+         $("#counte1").text('Current Account');
+         $("#counte1").css('font-size','22px');
          $("#counte1").css('padding-top','35px');
 
-         $("#counte2").text('DIG Chamber');
-         $("#counte2").css('font-size','25px');
+         $("#counte2").text('Savings Account');
+         $("#counte2").css('font-size','23px');
          $("#counte2").css('padding-top','35px');
 
-         $("#counte3").text('DIG Admin section');
+         $("#counte3").text('Fixed Deposit');
          $("#counte3").css('font-size','23px');
          $("#counte3").css('padding-top','35px');
 
-         $("#counte4").text('Reception');
+         $("#counte4").text('Gold Loan');
          $("#counte4").css('font-size','25px');
          $("#counte4").css('padding-top','35px');
 
-         $("#counte5").text('Addon');
+         $("#counte5").text('Loan');
          $("#counte5").css('font-size','25px');
          $("#counte5").css('padding-top','35px');
 
-         $("#counte6").text('Addon');
+         $("#counte6").text('Teller');
          $("#counte6").css('font-size','25px');
          $("#counte6").css('padding-top','35px');
 
@@ -432,27 +433,27 @@ $('#langChange').click(function(){
         $("#navigatio").css('font-size','40px');
         $("#navigatio").css('padding-top','18px');
         //// navigation page
-        $("#counte1").text('याचिका');
+        $("#counte1").text('चालू खाता');
         $("#counte1").css('font-size','40px');
         $("#counte1").css('padding-top','6%');
 
-        $("#counte2").text('DIG चैंबर');
+        $("#counte2").text('बचत खाता');
         $("#counte2").css('font-size','40px');
         $("#counte2").css('padding-top','6%');
 
-        $("#counte3").text('DIG प्रशासन अनुभाग');
-        $("#counte3").css('font-size','40px');
+        $("#counte3").text('सावधि जमा');
+        $("#counte3").css('font-size','33px');
         $("#counte3").css('padding-top','6%');
 
-        $("#counte4").text('रिसेप्शन');
+        $("#counte4").text('गोल्ड लोन');
         $("#counte4").css('font-size','30px');
         $("#counte4").css('padding-top','8%');
 
-        $("#counte5").text('ऐड ऑन');
+        $("#counte5").text('लोन');
         $("#counte5").css('font-size','40px');
         $("#counte5").css('padding-top','6%');
 
-        $("#counte6").text('ऐड ऑन');
+        $("#counte6").text('टेलर');
         $("#counte6").css('font-size','40px');
         $("#counte6").css('padding-top','6%');
 
@@ -526,27 +527,27 @@ $('#langChange').click(function(){
          $("#videoTex").css('padding-top','38px');
          
          /////navigation page
-         $("#counte1").text('Petition');
-         $("#counte1").css('font-size','25px');
+         $("#counte1").text('Current Account');
+         $("#counte1").css('font-size','22px');
          $("#counte1").css('padding-top','35px');
 
-         $("#counte2").text('DIG Chamber');
-         $("#counte2").css('font-size','25px');
+         $("#counte2").text('Savings Account');
+         $("#counte2").css('font-size','23px');
          $("#counte2").css('padding-top','35px');
 
-         $("#counte3").text('DIG Admin section');
+         $("#counte3").text('Fixed Deposit');
          $("#counte3").css('font-size','23px');
          $("#counte3").css('padding-top','35px');
 
-         $("#counte4").text('Reception');
+         $("#counte4").text('Gold Loan');
          $("#counte4").css('font-size','25px');
          $("#counte4").css('padding-top','35px');
 
-         $("#counte5").text('Addon');
+         $("#counte5").text('Loan');
          $("#counte5").css('font-size','25px');
          $("#counte5").css('padding-top','35px');
 
-         $("#counte6").text('Addon');
+         $("#counte6").text('Teller');
          $("#counte6").css('font-size','25px');
          $("#counte6").css('padding-top','35px');
 
