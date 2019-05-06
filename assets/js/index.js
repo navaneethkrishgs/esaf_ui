@@ -165,6 +165,7 @@ $("#navigationPage_counter4").hide();
 $("#navigationPage_counter5").hide();
 $("#navigationPage_counter6").hide();
 
+$("#battery_low_Page").hide();
 ///////////////////////////first page ////
     $(".valid").hide();
 
@@ -1812,5 +1813,59 @@ function letsStart() {
     $("#loadingPage").show();
     setTimeout(function(){ ui_refresh.publish(str); $("#loadingPage").hide(); $("#indexPage").show();  },3000);
 }
+/////////////// battery_low_Page
+function battery_low() {
+    $('#startingPage').hide();
+    $("#loadingPage").hide();
+    $("#indexPage").hide();
+    $("#welcomePage").hide();
 
+    $("#settingsPage").hide(); $("#settings_navigation_Page").hide();
+    $("#settings_Nav_App_Page").hide();
+    $("#settings_Nav_Joystick_Page").hide();
+    $("#settings_Nav_Keyboard_Page").hide();
+    $("#face_recognition").hide();
+
+    $("#counterPage").hide();
+    $("#navigationPage").hide();
+    $("#speechPage").hide();
+    $("#videoPage").hide();
+    $("#reasonForVisitingPage").hide();
+    $("#others6Page").hide();
+    $("#navigationPage_counter1").hide();   
+    $("#navigationPage_counter2").hide(); 
+    $("#navigationPage_counter3").hide();
+    $("#navigationPage_counter4").hide();
+    $("#navigationPage_counter5").hide();
+    $("#navigationPage_counter6").hide();
+
+    $("#battery_low_Page").show();
+}
+function plugged() {
+    $('#startingPage').show();
+    $("#loadingPage").hide();
+    $("#indexPage").hide();
+    $("#welcomePage").hide();
+
+    $("#settingsPage").hide(); $("#settings_navigation_Page").hide();
+    $("#settings_Nav_App_Page").hide();
+    $("#settings_Nav_Joystick_Page").hide();
+    $("#settings_Nav_Keyboard_Page").hide();
+    $("#face_recognition").hide();
+
+    $("#counterPage").hide();
+    $("#navigationPage").hide();
+    $("#speechPage").hide();
+    $("#videoPage").hide();
+    $("#reasonForVisitingPage").hide();
+    $("#others6Page").hide();
+    $("#navigationPage_counter1").hide();   
+    $("#navigationPage_counter2").hide(); 
+    $("#navigationPage_counter3").hide();
+    $("#navigationPage_counter4").hide();
+    $("#navigationPage_counter5").hide();
+    $("#navigationPage_counter6").hide();
+
+    $("#battery_low_Page").hide();
+}
 

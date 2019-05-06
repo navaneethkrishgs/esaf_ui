@@ -1391,3 +1391,30 @@ video::-webkit-media-controls-volume-slider {
 video::-webkit-media-controls-timeline {
     display: none;
 } */
+
+/* lowBCatteryaption */
+body main #lowBCatteryaption {
+  right: 6%;
+  top: 50%;
+  left: 30%;
+  position: absolute;
+}
+#lowbatteryImg{
+  width: 65%;
+  animation: blinker 1s linear infinite;
+}
+#lb_text{
+  font-family: good-times;
+  font-weight: normal;
+  text-align: center;
+  font-size: 44px;
+  padding-left: 32px;
+  padding-top: 55px;
+  color: #F44336;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

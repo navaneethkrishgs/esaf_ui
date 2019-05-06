@@ -118,6 +118,9 @@
         <header >
             <ul >
                 <li>
+                    <i class="fa fa-battery-full" aria-hidden="true" id="cameraFeedBtn" onclick="battery_low()"></i>
+                </li>
+                <li>
                     <i class="fa fa-video-camera" aria-hidden="true" id="cameraFeedBtn" onclick="cameraFeed()"></i>
                 </li>
                 <li>
@@ -778,7 +781,9 @@
                 <span class="langSeleBtn">Hindi</span>
             </ul>
             <ul >   
-
+                <li>
+                    <i class="fa fa-battery-full" aria-hidden="true" id="cameraFeedBtn"></i>
+                </li>
                 <li>
                     <p id="time1"></p>
                 </li>
@@ -1558,6 +1563,36 @@
 </div>	
 <!-- end others6Page-->
 
+<!-- start battery low session-->
+<div id="battery_low_Page">
+    <header  >
+    </header>
+    <main class="background-image">
+
+            <div class="class-allpage container-index">
+                <div class="container-logo-caption" id="lowBCatteryaption" >
+                
+                    <div class="navigation02">
+                       <img src ="../assets/images/low_battery.png" id="lowbatteryImg">
+                    </div>
+                </div>
+                <h2 id="lb_text">Low Battery...</h2>
+            </div>
+
+            <!-- <footer> -->
+                   
+                </main>
+                <!-- <div class="enterBtn1" id="enterBtn" >
+               
+                 <div class="centered1"> 
+                        <a href="#" onclick="pluged();"><li><i  id="nextPage" class="fa fa-arrow-left others6PageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                </div>
+                 </div> 
+                
+            </footer>   -->
+    
+</div>	
+<!-- end battery low-->
 <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     
