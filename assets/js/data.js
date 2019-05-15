@@ -227,7 +227,7 @@ console.log('Connection to websocket server closed.');
 });
 
 
-
+//subscriber
 // home page to welcome page ui change
 var listener = new ROSLIB.Topic({
     ros : ros,
@@ -246,6 +246,28 @@ var listener = new ROSLIB.Topic({
   });
 
 
+var battery_trigger = new ROSLIB.Topic({
+     ros : ros,
+     name : '/battery',
+     messageType : 'std_msgs/String'
+   });
+battery_trigger.subscribe(function(message) {
+    // $("#indexPage").hide();
+    //   document.getElementById('User').innerHTML = message.data;
+    //   $("#welcomePage").show();
+    //   setTimeout(function(){ start();  $("#welcomePage").hide(); $("#counterPage").show(); index = setInterval(counterPage_timer,3000); },7000);
+    console.log('Battery Percentage Received ' + battery_trigger.name + ': ' + message.data);
+    if (parseFloat(message.data) < 25 ) {
+      battery_low();
+    } 
+    else{
+      plugged();
+    }  
+
+    // listener.unsubscribe();
+  });
+
+//publisher 
 
 
 var ui_refresh = new ROSLIB.Topic({
