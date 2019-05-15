@@ -257,7 +257,7 @@ battery_trigger.subscribe(function(message) {
     //   $("#welcomePage").show();
     //   setTimeout(function(){ start();  $("#welcomePage").hide(); $("#counterPage").show(); index = setInterval(counterPage_timer,3000); },7000);
     console.log('Battery Percentage Received ' + battery_trigger.name + ': ' + message.data);
-    if (parseFloat(message.data) < 25 ) {
+    if (parseFloat(message.data) < 26 ) {
       battery_low();
     } 
     else{
